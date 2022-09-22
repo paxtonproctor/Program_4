@@ -75,7 +75,7 @@
             this.buttonClose.Name = "buttonClose";
             this.buttonClose.Size = new System.Drawing.Size(115, 32);
             this.buttonClose.TabIndex = 2;
-            this.buttonClose.Text = "Close";
+            this.buttonClose.Text = "Quit";
             this.buttonClose.UseVisualStyleBackColor = true;
             // 
             // groupBoxMenu
@@ -120,7 +120,7 @@
             this.buttonAction.Name = "buttonAction";
             this.buttonAction.Size = new System.Drawing.Size(113, 32);
             this.buttonAction.TabIndex = 5;
-            this.buttonAction.Text = "Results";
+            this.buttonAction.Text = "Guess";
             this.buttonAction.UseVisualStyleBackColor = true;
             // 
             // labelRow

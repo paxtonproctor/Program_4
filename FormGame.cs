@@ -114,7 +114,7 @@ namespace Program_4
             textBoxCol.Enabled = true;
             buttonSettings.Enabled = false;
             #endregion
-            labelDescription.Text = "Type a row and column value and click result to see if you found the treasure.";
+            labelDescription.Text = "Type a row and column value and click Guess to see if you found the treasure.";
 
         }
 
@@ -129,7 +129,8 @@ namespace Program_4
             labelRow.Enabled = true;
             buttonStart.Enabled = false;
             #endregion
-            labelDescription.Text = "To change the size of the map type in the row and column then click result.";
+            labelDescription.Text = "To change the size of the map type in the row and column then click change.";
+            buttonAction.Text = "Change";
         }
 
         private void ButtonClose_Click(object sender, EventArgs e)
