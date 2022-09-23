@@ -12,6 +12,9 @@ namespace Program_4
 {
     public partial class FormGame : Form
     {
+        private int Row, Col = 0;
+        private ClassGameMechanics game = new ClassGameMechanics();
+
         public FormGame()
         {
             InitializeComponent();
@@ -37,7 +40,6 @@ namespace Program_4
             textBoxRow.KeyPress += TextBoxRow_KeyPress;
             textBoxCol.TextChanged += TextBoxCol_TextChanged;
             textBoxRow.TextChanged += TextBoxRow_TextChanged;
-
 
         }
 
@@ -140,7 +142,11 @@ namespace Program_4
 
         private void ButtonAction_Click(object sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            Row = int.Parse(textBoxRow.Text);
+            Col = int.Parse(textBoxRow.Text);
+            game.MapMaker(Row, Col);
+            labelGameMap.Enabled = true;
+            labelGameMap.Text = game.PrintMap().ToString();
         }
         #endregion
     }
