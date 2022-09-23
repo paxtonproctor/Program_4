@@ -142,11 +142,20 @@ namespace Program_4
 
         private void ButtonAction_Click(object sender, EventArgs e)
         {
-            Row = int.Parse(textBoxRow.Text);
-            Col = int.Parse(textBoxRow.Text);
-            game.MapMaker(Row, Col);
-            labelGameMap.Enabled = true;
-            labelGameMap.Text = game.PrintMap().ToString();
+            if(buttonAction.Text == "Guess")
+            {
+
+            }
+            else
+            {
+                Row = int.Parse(textBoxRow.Text);
+                Col = int.Parse(textBoxRow.Text);
+                game.MapMaker(Row, Col);
+                labelGameMap.Enabled = true;
+                labelGameMap.Text = game.PrintMap().ToString();
+                buttonAction.Text = "Guess";
+                buttonStart.Enabled = true;
+            }
         }
         #endregion
     }
