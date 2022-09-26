@@ -12,8 +12,12 @@ namespace Program_4
 {
     public partial class FormGame : Form
     {
-        private int Row, Col = 0;
-        private ClassGameMechanics game = new ClassGameMechanics();
+        int Row = 0; 
+        int Col = 0;
+        byte rowGuess = 0;
+        byte columnGuess = 0;
+        string answer = " ";
+        ClassGameMechanics game;
 
         public FormGame()
         {
@@ -72,14 +76,9 @@ namespace Program_4
             string value = textBoxRow.Text;
             if (textBoxRow.Text != "")
             {
-                if (int.Parse(value) > 25)
+                if (int.Parse(value) > 15)
                 {
-                    textBoxRow.Text = "25";
-                }
-
-                if (int.Parse(value) == 0)
-                {
-                    textBoxRow.Text = "1";
+                    textBoxRow.Text = "15";
                 }
             }
         }
@@ -89,14 +88,9 @@ namespace Program_4
             string value = textBoxCol.Text;
             if (textBoxCol.Text != "")
             {
-                if (int.Parse(value) > 25)
+                if (int.Parse(value) > 15)
                 {
-                    textBoxCol.Text = "25";
-                }
-
-                if (int.Parse(value) == 0)
-                {
-                    textBoxCol.Text = "1";
+                    textBoxCol.Text = "15";
                 }
             }
         }
@@ -142,19 +136,41 @@ namespace Program_4
 
         private void ButtonAction_Click(object sender, EventArgs e)
         {
-            if(buttonAction.Text == "Guess")
+            try
             {
-
+                if (Convert.ToInt32(textBoxRow.Text) != 0 ||
+                Convert.ToInt32(textBoxCol.Text) != 0)
+                {
+                    if (buttonAction.Text == "Guess")
+                    {
+                        game.EvaluateGuess(rowGuess, columnGuess);
+                    }
+                    else
+                    {
+                        labelGameMap.Text = string.Empty;
+                        Row = Convert.ToInt32(textBoxRow.Text);
+                        Col = Convert.ToInt32(textBoxCol.Text);
+                        game = new ClassGameMechanics(Row, Col);
+                        labelGameMap.Enabled = true;
+                        //labelGameMap.Text = "Here";
+                        //game.PrintMap(answer);
+                        labelGameMap.Text += game.PrintMap();
+                        buttonAction.Text = "Guess";
+                        buttonStart.Enabled = true;
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Sorry but the map must be at least a " +
+                        "1x1 Try again\n", "Map Size error", 
+                        MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
+                }
             }
-            else
+            catch(Exception)
             {
-                Row = int.Parse(textBoxRow.Text);
-                Col = int.Parse(textBoxRow.Text);
-                game.MapMaker(Row, Col);
-                labelGameMap.Enabled = true;
-                labelGameMap.Text = game.PrintMap().ToString();
-                buttonAction.Text = "Guess";
-                buttonStart.Enabled = true;
+                MessageBox.Show("Sorry but the map must be at least a " +
+                    "1x1 Try again\n", "Map Size error", 
+                    MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
             }
         }
         #endregion

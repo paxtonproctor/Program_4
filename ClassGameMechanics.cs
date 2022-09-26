@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Common;
 using System.Linq;
 using System.Reflection.Emit;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Program_4
 {
@@ -12,14 +14,10 @@ namespace Program_4
         char [,] map;
         byte srow = 0;
         byte scol = 0;
-        int guessesCount;
+        int guessesCount = 0;
+        string printmap = "";
 
-        public ClassGameMechanics()
-        {
-
-        }
-
-        public void MapMaker(int row, int column)
+        public ClassGameMechanics(int row, int column)
         {
             map = new char[row, column];
 
@@ -37,31 +35,82 @@ namespace Program_4
             guessesCount = 0;
         }
 
-        public char PrintMap()
+        public string PrintMap()
         {
-            char u = 'u';
-            char o = 'o';
             byte count = 0;
 
-            for(int i = 0; i < map.GetLength(1); i++)
+            printmap = " ";
+            for (int i = 0; i < map.GetLength(1); i++)
             {
-                if(count == 10)
+                if (count == 15)
                 {
                     count = 0;
                 }
-                u = (char)count;
+                printmap += count.ToString() + " ";
                 count++;
             }
 
-            for(int j = 0; j < map.GetLength(0); j++)
+            for (int j = 0; j < map.GetLength(0); j++)
             {
-                u = ((char)(j + ((j < 10) ? ' ' : ' ')));
+                printmap += (j + ((j < 15) ? " " : " ")).ToString() + "\n";
                 for (int k = 0; k < map.GetLength(1); k++)
                 {
-                    u = map[j, k];
+                    printmap += map[j, k].ToString();
+                    printmap += " ";
                 }
             }
-            return u;
+            return printmap;
+        }
+
+        public bool EvaluateGuess(int rowGuess, int columnGuess)
+        {
+            bool islandfound = false;
+
+            guessesCount++;
+
+            if ((rowGuess == srow) && (columnGuess == scol))
+            {
+                map[rowGuess, columnGuess] = 'I';
+                islandfound = true;
+            }
+            else if (guessesCount % 2 == 0)
+            {
+                if (rowGuess < srow)
+                {
+                    map[rowGuess, columnGuess] = 'S';
+                }
+                else if (rowGuess > srow)
+                {
+                    map[rowGuess, columnGuess] = 'N';
+                }
+                else
+                {
+                    map[rowGuess, columnGuess] = 'R';
+                }
+            }
+            else
+            {
+                if (columnGuess < scol)
+                {
+                    map[rowGuess, columnGuess] = 'E';
+                }
+                else if (columnGuess > scol)
+                {
+                    map[rowGuess, columnGuess] = 'W';
+                }
+                else
+                {
+                    map[rowGuess, columnGuess] = 'C';
+                }
+
+            }
+            PrintMap();
+            return islandfound;
+        }
+
+        public int GetNumberOfGuesses()
+        {
+            return guessesCount;
         }
     }
 }

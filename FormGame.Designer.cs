@@ -50,30 +50,30 @@
             // 
             // buttonStart
             // 
-            this.buttonStart.Location = new System.Drawing.Point(5, 17);
-            this.buttonStart.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonStart.Location = new System.Drawing.Point(7, 21);
+            this.buttonStart.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonStart.Name = "buttonStart";
-            this.buttonStart.Size = new System.Drawing.Size(115, 32);
+            this.buttonStart.Size = new System.Drawing.Size(153, 39);
             this.buttonStart.TabIndex = 0;
             this.buttonStart.Text = "Start";
             this.buttonStart.UseVisualStyleBackColor = true;
             // 
             // buttonSettings
             // 
-            this.buttonSettings.Location = new System.Drawing.Point(5, 54);
-            this.buttonSettings.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonSettings.Location = new System.Drawing.Point(7, 66);
+            this.buttonSettings.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonSettings.Name = "buttonSettings";
-            this.buttonSettings.Size = new System.Drawing.Size(115, 32);
+            this.buttonSettings.Size = new System.Drawing.Size(153, 39);
             this.buttonSettings.TabIndex = 1;
             this.buttonSettings.Text = "Settings";
             this.buttonSettings.UseVisualStyleBackColor = true;
             // 
             // buttonClose
             // 
-            this.buttonClose.Location = new System.Drawing.Point(7, 92);
-            this.buttonClose.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonClose.Location = new System.Drawing.Point(9, 113);
+            this.buttonClose.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonClose.Name = "buttonClose";
-            this.buttonClose.Size = new System.Drawing.Size(115, 32);
+            this.buttonClose.Size = new System.Drawing.Size(153, 39);
             this.buttonClose.TabIndex = 2;
             this.buttonClose.Text = "Quit";
             this.buttonClose.UseVisualStyleBackColor = true;
@@ -83,11 +83,11 @@
             this.groupBoxMenu.Controls.Add(this.buttonStart);
             this.groupBoxMenu.Controls.Add(this.buttonClose);
             this.groupBoxMenu.Controls.Add(this.buttonSettings);
-            this.groupBoxMenu.Location = new System.Drawing.Point(442, 119);
-            this.groupBoxMenu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBoxMenu.Location = new System.Drawing.Point(872, 149);
+            this.groupBoxMenu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBoxMenu.Name = "groupBoxMenu";
-            this.groupBoxMenu.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.groupBoxMenu.Size = new System.Drawing.Size(124, 135);
+            this.groupBoxMenu.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBoxMenu.Size = new System.Drawing.Size(165, 166);
             this.groupBoxMenu.TabIndex = 3;
             this.groupBoxMenu.TabStop = false;
             this.groupBoxMenu.Text = "Menu";
@@ -95,11 +95,11 @@
             // groupBoxGame
             // 
             this.groupBoxGame.Controls.Add(this.labelGameMap);
-            this.groupBoxGame.Location = new System.Drawing.Point(9, 11);
-            this.groupBoxGame.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBoxGame.Location = new System.Drawing.Point(12, 17);
+            this.groupBoxGame.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBoxGame.Name = "groupBoxGame";
-            this.groupBoxGame.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.groupBoxGame.Size = new System.Drawing.Size(428, 243);
+            this.groupBoxGame.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBoxGame.Size = new System.Drawing.Size(363, 299);
             this.groupBoxGame.TabIndex = 4;
             this.groupBoxGame.TabStop = false;
             this.groupBoxGame.Text = "Game";
@@ -107,18 +107,17 @@
             // labelGameMap
             // 
             this.labelGameMap.AutoSize = true;
-            this.labelGameMap.Location = new System.Drawing.Point(4, 15);
-            this.labelGameMap.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelGameMap.Location = new System.Drawing.Point(5, 18);
             this.labelGameMap.Name = "labelGameMap";
-            this.labelGameMap.Size = new System.Drawing.Size(0, 13);
+            this.labelGameMap.Size = new System.Drawing.Size(0, 16);
             this.labelGameMap.TabIndex = 0;
             // 
             // buttonAction
             // 
-            this.buttonAction.Location = new System.Drawing.Point(4, 67);
-            this.buttonAction.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonAction.Location = new System.Drawing.Point(5, 82);
+            this.buttonAction.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonAction.Name = "buttonAction";
-            this.buttonAction.Size = new System.Drawing.Size(113, 32);
+            this.buttonAction.Size = new System.Drawing.Size(151, 39);
             this.buttonAction.TabIndex = 5;
             this.buttonAction.Text = "Guess";
             this.buttonAction.UseVisualStyleBackColor = true;
@@ -126,47 +125,45 @@
             // labelRow
             // 
             this.labelRow.AutoSize = true;
-            this.labelRow.Location = new System.Drawing.Point(13, 19);
-            this.labelRow.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelRow.Location = new System.Drawing.Point(17, 23);
             this.labelRow.Name = "labelRow";
-            this.labelRow.Size = new System.Drawing.Size(32, 13);
+            this.labelRow.Size = new System.Drawing.Size(37, 16);
             this.labelRow.TabIndex = 6;
             this.labelRow.Text = "Row:";
             // 
             // labelCol
             // 
             this.labelCol.AutoSize = true;
-            this.labelCol.Location = new System.Drawing.Point(4, 41);
-            this.labelCol.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelCol.Location = new System.Drawing.Point(5, 50);
             this.labelCol.Name = "labelCol";
-            this.labelCol.Size = new System.Drawing.Size(45, 13);
+            this.labelCol.Size = new System.Drawing.Size(55, 16);
             this.labelCol.TabIndex = 7;
             this.labelCol.Text = "Column:";
             // 
             // textBoxRow
             // 
-            this.textBoxRow.Location = new System.Drawing.Point(45, 16);
-            this.textBoxRow.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBoxRow.Location = new System.Drawing.Point(60, 20);
+            this.textBoxRow.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxRow.Name = "textBoxRow";
-            this.textBoxRow.Size = new System.Drawing.Size(76, 20);
+            this.textBoxRow.Size = new System.Drawing.Size(100, 22);
             this.textBoxRow.TabIndex = 8;
             // 
             // textBoxCol
             // 
-            this.textBoxCol.Location = new System.Drawing.Point(45, 39);
-            this.textBoxCol.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBoxCol.Location = new System.Drawing.Point(60, 48);
+            this.textBoxCol.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxCol.Name = "textBoxCol";
-            this.textBoxCol.Size = new System.Drawing.Size(76, 20);
+            this.textBoxCol.Size = new System.Drawing.Size(100, 22);
             this.textBoxCol.TabIndex = 9;
             // 
             // groupBoxDescription
             // 
             this.groupBoxDescription.Controls.Add(this.labelDescription);
-            this.groupBoxDescription.Location = new System.Drawing.Point(9, 259);
-            this.groupBoxDescription.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBoxDescription.Location = new System.Drawing.Point(377, 15);
+            this.groupBoxDescription.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBoxDescription.Name = "groupBoxDescription";
-            this.groupBoxDescription.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.groupBoxDescription.Size = new System.Drawing.Size(557, 61);
+            this.groupBoxDescription.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBoxDescription.Size = new System.Drawing.Size(489, 301);
             this.groupBoxDescription.TabIndex = 10;
             this.groupBoxDescription.TabStop = false;
             this.groupBoxDescription.Text = "Game Output";
@@ -174,10 +171,9 @@
             // labelDescription
             // 
             this.labelDescription.AutoSize = true;
-            this.labelDescription.Location = new System.Drawing.Point(5, 18);
-            this.labelDescription.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelDescription.Location = new System.Drawing.Point(7, 22);
             this.labelDescription.Name = "labelDescription";
-            this.labelDescription.Size = new System.Drawing.Size(384, 26);
+            this.labelDescription.Size = new System.Drawing.Size(469, 32);
             this.labelDescription.TabIndex = 0;
             this.labelDescription.Text = "Welcome to Treasure Island Game! \r\nYou can start the Game or you can click Settin" +
     "gs to change the size of the map.";
@@ -189,25 +185,25 @@
             this.groupBoxActions.Controls.Add(this.textBoxCol);
             this.groupBoxActions.Controls.Add(this.labelCol);
             this.groupBoxActions.Controls.Add(this.textBoxRow);
-            this.groupBoxActions.Location = new System.Drawing.Point(442, 11);
-            this.groupBoxActions.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBoxActions.Location = new System.Drawing.Point(872, 17);
+            this.groupBoxActions.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBoxActions.Name = "groupBoxActions";
-            this.groupBoxActions.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.groupBoxActions.Size = new System.Drawing.Size(124, 103);
+            this.groupBoxActions.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBoxActions.Size = new System.Drawing.Size(165, 127);
             this.groupBoxActions.TabIndex = 1;
             this.groupBoxActions.TabStop = false;
             this.groupBoxActions.Text = "Actions";
             // 
             // FormGame
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(574, 330);
+            this.ClientSize = new System.Drawing.Size(1044, 326);
             this.Controls.Add(this.groupBoxActions);
             this.Controls.Add(this.groupBoxDescription);
             this.Controls.Add(this.groupBoxMenu);
             this.Controls.Add(this.groupBoxGame);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FormGame";
             this.Text = "Treasure Island";
             this.groupBoxMenu.ResumeLayout(false);
