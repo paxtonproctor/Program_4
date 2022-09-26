@@ -97,6 +97,12 @@ namespace Program_4
         #endregion
 
         #region button Events
+
+        /// <summary>
+        /// button start will enable everything except settings and will start count of guesses and map updating
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ButtonStart_Click(object sender, EventArgs e)
         {
             #region Enablers
@@ -114,6 +120,11 @@ namespace Program_4
 
         }
 
+        /// <summary>
+        /// changes the size of the map
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ButtonSettings_Click(object sender, EventArgs e)
         {
             #region Enablers
@@ -129,15 +140,29 @@ namespace Program_4
             buttonAction.Text = "Change";
         }
 
+
+        /// <summary>
+        /// Button closes the application
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ButtonClose_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
+        /// <summary>
+        /// main button gets info from the user and will call classgamemechanics
+        /// in order to get the games info.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ButtonAction_Click(object sender, EventArgs e)
         {
+            // prevents empty textbox issue
             try
             {
+                // decides whether it is a guess or a change
                 if (buttonAction.Text == "Guess")
                 {
                     columnGuess = (byte)Convert.ToInt32(textBoxCol.Text);
@@ -154,9 +179,11 @@ namespace Program_4
                         MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
                     }
                 }
+                // if its a change in size map then they can't put in 0
                 else if (Convert.ToInt32(textBoxRow.Text) != 0 ||
                 Convert.ToInt32(textBoxCol.Text) != 0)
                 {
+                    // probably a unnecessary check but it doesn't hurt to make sure
                     if(buttonAction.Text == "Change")
                     {
                         labelGameMap.Text = string.Empty;
