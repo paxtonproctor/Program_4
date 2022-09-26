@@ -39,8 +39,7 @@ namespace Program_4
         {
             byte count = 0;
 
-            printmap = " ";
-            for (int i = 0; i < map.GetLength(1); i++)
+            for (int i = 0; i < map.GetLength(0); i++)
             {
                 if (count == 15)
                 {
@@ -50,28 +49,24 @@ namespace Program_4
                 count++;
             }
 
+            printmap += "\n";
             for (int j = 0; j < map.GetLength(0); j++)
             {
-                printmap += (j + ((j < 15) ? " " : " ")).ToString() + "\n";
                 for (int k = 0; k < map.GetLength(1); k++)
                 {
                     printmap += map[j, k].ToString();
                     printmap += " ";
                 }
+                printmap += (j + ((j < 15) ? " " : " ")).ToString() + "\n";
             }
             return printmap;
         }
 
         public bool EvaluateGuess(int rowGuess, int columnGuess)
         {
-            bool islandfound = false;
-
-            guessesCount++;
-
             if ((rowGuess == srow) && (columnGuess == scol))
             {
                 map[rowGuess, columnGuess] = 'I';
-                islandfound = true;
             }
             else if (guessesCount % 2 == 0)
             {
@@ -104,13 +99,6 @@ namespace Program_4
                 }
 
             }
-            PrintMap();
-            return islandfound;
-        }
-
-        public int GetNumberOfGuesses()
-        {
-            return guessesCount;
         }
     }
 }

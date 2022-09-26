@@ -138,25 +138,36 @@ namespace Program_4
         {
             try
             {
-                if (Convert.ToInt32(textBoxRow.Text) != 0 ||
-                Convert.ToInt32(textBoxCol.Text) != 0)
+                if (buttonAction.Text == "Guess")
                 {
-                    if (buttonAction.Text == "Guess")
+                    columnGuess = (byte)Convert.ToInt32(textBoxCol.Text);
+                    rowGuess = (byte)Convert.ToInt32(textBoxRow.Text);
+                    if (rowGuess < Row || columnGuess < Col)
                     {
                         game.EvaluateGuess(rowGuess, columnGuess);
                     }
                     else
+                    {
+                        MessageBox.Show("Sorry but your guess must be within "
+                            + Row.ToString() + "X" + Col.ToString() +
+                        " Try again\n", "Map guess error",
+                        MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
+                    }
+                }
+                else if (Convert.ToInt32(textBoxRow.Text) != 0 ||
+                Convert.ToInt32(textBoxCol.Text) != 0)
+                {
+                    if(buttonAction.Text == "Change")
                     {
                         labelGameMap.Text = string.Empty;
                         Row = Convert.ToInt32(textBoxRow.Text);
                         Col = Convert.ToInt32(textBoxCol.Text);
                         game = new ClassGameMechanics(Row, Col);
                         labelGameMap.Enabled = true;
-                        //labelGameMap.Text = "Here";
-                        //game.PrintMap(answer);
                         labelGameMap.Text += game.PrintMap();
                         buttonAction.Text = "Guess";
                         buttonStart.Enabled = true;
+                        buttonAction.Enabled = false;
                     }
                 }
                 else
