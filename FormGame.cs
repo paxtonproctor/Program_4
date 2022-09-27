@@ -17,7 +17,7 @@ namespace Program_4
         byte rowGuess = 0;
         byte columnGuess = 0;
         int guesscount = 0;
-        string answer = " ";
+        
         ClassGameMechanics game;
 
         public FormGame()
