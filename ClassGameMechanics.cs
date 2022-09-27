@@ -11,15 +11,17 @@ namespace Program_4
 {
     internal class ClassGameMechanics
     {
-        char [,] map;
+        char[,] map;
         byte srow = 0;
         byte scol = 0;
         int guessesCount = 0;
         string printmap = "";
+        string guess = "";
 
         public ClassGameMechanics(int row, int column)
         {
             map = new char[row, column];
+
 
             Random rand = new Random();
             srow = (byte)rand.Next(0, map.GetLength(0) - 1);
@@ -38,7 +40,7 @@ namespace Program_4
         public string PrintMap()
         {
             byte count = 0;
-
+            printmap = "";
             for (int i = 0; i < map.GetLength(0); i++)
             {
                 if (count == 15)
@@ -61,26 +63,37 @@ namespace Program_4
             }
             return printmap;
         }
-
-        public bool EvaluateGuess(int rowGuess, int columnGuess)
+        public string EvaluateGuess(int rowGuess, int columnGuess)
         {
+            guess = "";
+
+
             if ((rowGuess == srow) && (columnGuess == scol))
             {
+                
                 map[rowGuess, columnGuess] = 'I';
+                guess = PrintMap();
+                MessageBox.Show("You found the Island!", "Winner", 
+                    MessageBoxButtons.RetryCancel, MessageBoxIcon.Question);
+                printmap = "";
+                
             }
             else if (guessesCount % 2 == 0)
             {
                 if (rowGuess < srow)
                 {
                     map[rowGuess, columnGuess] = 'S';
+                    guess = PrintMap();
                 }
                 else if (rowGuess > srow)
                 {
                     map[rowGuess, columnGuess] = 'N';
+                    guess = PrintMap();
                 }
                 else
                 {
                     map[rowGuess, columnGuess] = 'R';
+                    guess = PrintMap();
                 }
             }
             else
@@ -88,17 +101,21 @@ namespace Program_4
                 if (columnGuess < scol)
                 {
                     map[rowGuess, columnGuess] = 'E';
+                    guess = PrintMap();
                 }
                 else if (columnGuess > scol)
                 {
                     map[rowGuess, columnGuess] = 'W';
+                    guess = PrintMap();
                 }
                 else
                 {
                     map[rowGuess, columnGuess] = 'C';
+                    guess = PrintMap();
                 }
 
             }
+            return guess;
         }
     }
 }

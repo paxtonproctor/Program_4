@@ -16,6 +16,7 @@ namespace Program_4
         int Col = 0;
         byte rowGuess = 0;
         byte columnGuess = 0;
+        int guesscount = 0;
         string answer = " ";
         ClassGameMechanics game;
 
@@ -30,6 +31,7 @@ namespace Program_4
             groupBoxGame.Enabled = false;
             groupBoxActions.Enabled = false;
             buttonAction.Enabled = false;
+            buttonStart.Enabled = false;
             textBoxRow.Enabled = false;
             textBoxCol.Enabled = false;
 
@@ -117,6 +119,8 @@ namespace Program_4
             buttonSettings.Enabled = false;
             #endregion
             labelDescription.Text = "Type a row and column value and click Guess to see if you found the treasure.";
+            guesscount = 0;
+
 
         }
 
@@ -159,17 +163,31 @@ namespace Program_4
         /// <param name="e"></param>
         private void ButtonAction_Click(object sender, EventArgs e)
         {
+            
             // prevents empty textbox issue
             try
             {
+                //labelGameMap.Text = string.Empty;
                 // decides whether it is a guess or a change
+                
                 if (buttonAction.Text == "Guess")
                 {
+
+                    labelGameMap.Text = "";
                     columnGuess = (byte)Convert.ToInt32(textBoxCol.Text);
                     rowGuess = (byte)Convert.ToInt32(textBoxRow.Text);
                     if (rowGuess < Row || columnGuess < Col)
                     {
-                        game.EvaluateGuess(rowGuess, columnGuess);
+                        
+                        labelGameMap.Text = "";
+                       
+                        labelGameMap.Text =  game.EvaluateGuess(rowGuess, columnGuess);
+                        buttonSettings.Enabled = true;
+                        buttonStart.Enabled = false;
+
+                        guesscount++;
+                        labelDescription.Text = guesscount.ToString();
+
                     }
                     else
                     {
@@ -186,12 +204,12 @@ namespace Program_4
                     // probably a unnecessary check but it doesn't hurt to make sure
                     if(buttonAction.Text == "Change")
                     {
-                        labelGameMap.Text = string.Empty;
+                        labelGameMap.Text = "";
                         Row = Convert.ToInt32(textBoxRow.Text);
                         Col = Convert.ToInt32(textBoxCol.Text);
                         game = new ClassGameMechanics(Row, Col);
                         labelGameMap.Enabled = true;
-                        labelGameMap.Text += game.PrintMap();
+                        labelGameMap.Text = game.PrintMap();
                         buttonAction.Text = "Guess";
                         buttonStart.Enabled = true;
                         buttonAction.Enabled = false;
@@ -210,6 +228,7 @@ namespace Program_4
                     "1x1 Try again\n", "Map Size error", 
                     MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
             }
+            
         }
         #endregion
     }
